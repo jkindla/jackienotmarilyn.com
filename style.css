@@ -195,16 +195,39 @@ font-family: 'Comfortaa', cursive;
     }
 
   }
+
+  .calendar {
+    background: #f1f1f1;
+  padding: 100px;
+  }
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+  
     
 
 .CV {
-  background: #f1f1f1;
+  background: white;
 
 }
 
 .card-body {
 
-  background: #f1f1f1;
+  background: white;
 
 }
 
@@ -260,16 +283,10 @@ font-family: 'Comfortaa', cursive;
   .portfolio {
     text-align:center;
     line-height:2;
-    background:white;
+    background:#f1f1f1;
 
   }
 
-
-
-
-#songlist {
-  background: #f1f1f1;
-}
 
 
 
