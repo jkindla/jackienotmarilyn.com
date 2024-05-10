@@ -106,7 +106,7 @@ font-family: 'Comfortaa', cursive;
     padding:150px 0;
   }
   .hero-banner{
-  background-image: url('pictures/DSC_3026.jpg'); 
+  background-image: url('pictures/nowatermark1.png'); 
     background-size: cover;
     height:100vh;
     display:flex;
@@ -143,8 +143,9 @@ font-family: 'Comfortaa', cursive;
   }
 
   #vickie {
-    font-family: 'Anton', sans-serif;
-font-family: 'Comfortaa', cursive;;
+    font-family: "balbum-rolypoly", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-weight: 200;
       font-size: 2.4em;
       margin-left: auto;
