@@ -664,8 +664,20 @@ hr.abouthr {
     margin-right: 125px;
     
   }
-  
+
 
   
+}
+
+@media (max-width: 750px) {
+  .contact-text {
+      font-size: 10px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-text {
+      font-size: 8px; /* Even smaller font size for very small screens */
+  }
 }
 
