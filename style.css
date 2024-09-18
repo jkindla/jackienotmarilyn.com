@@ -4,26 +4,152 @@
     box-sizing:border-box;
   }
 
-  
-  body a:after {
-   /* content: "";*/
-    height: 4px;
-    background: red;
-    width: 0;
-    display: block;
-    transition: width 0.3s;
+  html, body {
+    overflow-x: hidden;
   }
-  body a:hover {
-    background: red;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* Underline effect grows from width: 0% to width 100% over 0.3s */
-  }
-  body a:hover::after {
-    width: 100%;
-    background: red;
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
+
+  .container {
+    width: 100%;
+    padding: 0 15px; /* Adjust padding for mobile */
+    margin: 0 auto; /* Centering */
+  }
+
+  
+/* Apply hover effect only to text links in the navbar, excluding icons */
+nav ul li a:not(.fab):after {
+  height: 4px;
+  background: red;
+  width: 0;
+  display: block;
+  transition: width 0.3s;
+  text-decoration: none !important;
+  
+}
+
+
+nav ul li a:not(.fab):hover {
+  background: red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul li a:not(.fab):hover::after {
+  width: 100%;
+  background: red;
+}
+
+/* Remove underline hover effect for social media icons */
+.navbar-nav.sm-icons .foo a::after {
+  display: none; /* Prevent underline from showing */
+
+
+}
+/* Social media icons default state: white on transparent background */
+.navbar-nav.sm-icons .foo a {
+  color: #fff; /* White for transparent background */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* When the navbar becomes sticky (with a white background), icons turn black */
+header.fixed .navbar-nav.sm-icons .foo a {
+  color: #000; /* Black for white background */
+  transition: color 0.3s ease;
+}
+
+/* Optional hover color: turns red */
+.navbar-nav.sm-icons .foo a:hover {
+  color: red;
+  text-decoration: none; /* No underline */
+}
+
+
+/* When the navbar has a white background (e.g., when sticky) */
+header.fixed.navbar .navbar-nav.sm-icons .foo a {
+  color: #000; /* Black icons for white navbar */
+}
+
+header.fixed .navbar-nav.sm-icons .foo a:hover {
+  color: red; /* Icons turn red on hover in fixed state */
+}
+
+/* Default state for the navbar before scroll (transparent) */
+header {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar becomes sticky (with a white background) */
+header.fixed {
+  background-color: #fff;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Remove hover underline effect globally */
+body a:hover::after {
+  display: none;
+  text-decoration: none !important;
+}
+
+/* Keep hover text color normal for other sections */
+body a:hover {
+  -webkit-text-fill-color: initial;
+}
+
+/* Disable hover effect for buttons or widget links */
+.bit-widget-initializer a:hover {
+  -webkit-text-fill-color: initial;
+  background: none; /* No hover background */
+}
+
+/* Default style for larger screens (the original layout) */
+.widget-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;  /* Make sure it takes up full width */
+  padding: 0 !important;  /* Ensure no padding is applied */
+  margin: 0 auto !important;  /* Center the container */
+}
+
+.widget-container .bit-widget-initializer {
+  max-width: 100% !important;  /* Ensure the widget does not exceed container's width */
+  width: 100% !important;  /* Take up full width */
+  display: block !important;
+}
+
+/* Adjust only for smaller screens */
+@media (max-width: 768px) {
+  .widget-container {
+    padding: 0 10px !important;  /* Add padding for mobile responsiveness */
+  }
+
+  .widget-container .bit-widget-initializer {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+  }
+}
+
+
+
+a:link { 
+  text-decoration: none; 
+} 
+a:visited { 
+  text-decoration: none; 
+} 
+a:hover { 
+  text-decoration: none; 
+} 
+a:active { 
+  text-decoration: none; 
+}
   .lpic {
     
     height: 50px;
@@ -151,6 +277,45 @@ font-family: 'Comfortaa', cursive;
       margin-left: auto;
       
   }
+
+  .scroll-arrow {
+    z-index: 1000; /* Ensure the chevron is on top */
+    pointer-events: all; /* Make sure it can be clicked */
+  }
+
+  /* Style for the scroll arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 20px; /* Place it near the bottom of the hero section */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: white; /* Adjust color as needed */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  color: red; /* Change color on hover */
+  transform: translateX(-50%) translateY(10px); /* Moves the arrow slightly on hover */
+}
+
+/* Add a subtle bounce animation to the arrow */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.scroll-arrow {
+  animation: bounce 2s infinite;
+}
   .about{
     text-align:center;
     line-height:2;
@@ -281,18 +446,32 @@ font-family: 'Comfortaa', cursive;
 }
 
 
+.CV .card-img-top {
+  width: 100%; /* Make the image take up the full width of the card */
+  height: 300px; /* Set a fixed height (adjust as needed) */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+}
 
-  .headerPortfolio {
-    text-align: center;
-  margin: 0 auto;
+
+.headerPortfolio {
+  text-align: center; /* Center the title */
+  margin: 0 auto; /* Center the element within its container */
   padding: 10px 0;
   font: 300 60px 'Oswald', sans-serif;
   color: black;
   text-transform: uppercase;
   letter-spacing: 6px;
-  
-  
+}
+
+/* Adjust for mobile view */
+@media (max-width: 768px) {
+  .headerPortfolio {
+    font-size: 40px; /* Adjust the font size for smaller screens */
+    text-align: center; /* Ensure it's centered on mobile */
+    margin: 0 auto; /* Center the element */
+    width: 100%; /* Make sure it takes full width */
   }
+}
 
   #title2
   {
@@ -303,10 +482,14 @@ font-family: 'Comfortaa', cursive;
   .portfolio {
     text-align:center;
     line-height:2;
-    background:#f1f1f1;
+    background:white;
 
   }
 
+  /* Adjust z-index for the carousel controls (arrows) */
+.carousel-control-prev, .carousel-control-next {
+  z-index: 10; /* Ensure they appear above other content */
+}
 
   
 
@@ -578,6 +761,7 @@ hr.abouthr {
 
 
 
+
 /* Begin Media Queries*/
 @media screen and (max-width: 850px) {
   .contact-wrapper {
@@ -601,6 +785,22 @@ hr.abouthr {
     width: 60px;
     height: 60px;
     line-height: 60px;
+  }
+}
+.form-group {
+  margin-bottom: 15px; /* Space between fields */
+}
+
+
+
+@media (max-width: 750px) {
+  .form-control, textarea {
+    width: 90%; /* Adjust width to be more fluid */
+    margin: 0 auto; /* Center align form elements */
+  }
+
+  .send-button {
+    width: 90%; /* Make the button match the width of input fields */
   }
 }
 
