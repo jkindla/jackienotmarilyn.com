@@ -39,12 +39,26 @@ $(window).scroll(function() {
     }
 });
 
-// Contact form reset
-document.querySelector('#contact-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  e.target.elements.name.value = '';
-  e.target.elements.email.value = '';
-  e.target.elements.message.value = '';
-});
+// AJAX form submission and form reset
+document.querySelector('#contact-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent the form from submitting the default way
 
+  const form = e.target; // Get the form
+  const formData = new FormData(form); // Collect form data
+
+  // Send the AJAX request using Fetch API
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+  }).then(response => {
+    if (response.ok) {
+      alert('Your message has been sent successfully!'); // Success message
+      form.reset(); // Clear the form fields
+    } else {
+      alert('Oops! Something went wrong. Please try again.'); // Failure message
+    }
+  }).catch(error => {
+    alert('An error occurred. Please try again later.'); // Error handling
+  });
+});
 

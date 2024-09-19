@@ -855,9 +855,16 @@ hr.abouthr {
 
   }
 
-  #name, #email {
-    margin-left: 35px;
+  
+  .useremail, .username {
+
+    transform: translateX(50px); /* Shifts the element 20px to the right */
+
+
   } 
+
+  
+
 
   .send-text, .fa-paper-plane {
     
@@ -871,13 +878,74 @@ hr.abouthr {
 
 @media (max-width: 750px) {
   .contact-text {
-      font-size: 10px; /* Smaller font size for smaller screens */
+      font-size: 20px; /* Smaller font size for smaller screens */
   }
 }
 
+/* Tighter layout for smaller mobile screens */
+@media screen and (max-width: 480px) {
+  .contact-wrapper {
+    padding: 0 15px; /* Slightly reduce padding on smaller screens */
+  }
+
+  .form-control, 
+  textarea {
+    width: 85%; /* Make fields slightly narrower */
+    max-width: 340px; /* Set a smaller max-width */
+    padding: 10px; /* Maintain good padding inside the fields */
+
+  }
+
+  .useremail, .username {
+
+    width: 85%; 
+    max-width: 265px; 
+    padding: 10px; 
+    transform: translateX(0px); /* Shifts the element 20px to the right */
+
+  } 
+
+  .send-text, .fa-paper-plane {
+    
+    margin-right: 160px;
+    
+  }
+
+
+ 
+
+  
+
+  .send-button {
+    width: 100%; /* Keep the button aligned with the form fields */
+    max-width: 340px;
+    margin: 20px auto;
+    padding: 10px 0; /* Adjust padding to match field size */
+  }
+
+  
+
+
+
+  .contact-text {
+    font-size: 12px; /* Adjust font size for very small screens */
+  }
+  
+  .social-media-list {
+    display: flex;
+    justify-content: center; /* Ensure icons remain centered */
+  }
+
+  .social-media-list li {
+    margin: 0 5px; /* Reduce spacing between icons */
+  }
+}
+
+
+
 @media (max-width: 480px) {
   .contact-text {
-      font-size: 8px; /* Even smaller font size for very small screens */
+      font-size: 12px; /* Even smaller font size for very small screens */
   }
 }
 
