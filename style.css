@@ -585,13 +585,16 @@ font-family: 'Comfortaa', cursive;
   letter-spacing: 6px;
 }
 
+
+
+/* Center the content within the contact-wrapper */
 .contact-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally within the wrapper */
+  justify-content: center; /* Center content vertically */
   margin: 0 auto;
   padding: 20px;
-  position: relative;
   max-width: 840px;
 }
 
