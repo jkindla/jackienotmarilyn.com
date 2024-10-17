@@ -882,70 +882,46 @@ hr.abouthr {
   }
 }
 
-/* Tighter layout for smaller mobile screens */
 @media screen and (max-width: 480px) {
   .contact-wrapper {
-    padding: 0 15px; /* Slightly reduce padding on smaller screens */
+    padding: 0 15px;
   }
 
-  .form-control, 
-  textarea {
-    width: 85%; /* Make fields slightly narrower */
-    max-width: 340px; /* Set a smaller max-width */
-    padding: 10px; /* Maintain good padding inside the fields */
-
+  .form-control, textarea {
+    width: 100%;
+    max-width: 340px;
+    padding: 10px;
   }
 
   .useremail, .username {
-
-    width: 85%; 
-    max-width: 265px; 
-    padding: 10px; 
-    transform: translateX(0px); /* Shifts the element 20px to the right */
-
-  } 
+    width: 100%;
+    max-width: 265px;
+    padding: 10px;
+    transform: none; /* Remove the translation on mobile */
+  }
 
   .send-text, .fa-paper-plane {
-    
-    margin-right: 160px;
-    
+    margin-right: 0;
+    text-align: center;
   }
-
-
- 
-
-  
 
   .send-button {
-    width: 100%; /* Keep the button aligned with the form fields */
+    width: 100%;
     max-width: 340px;
     margin: 20px auto;
-    padding: 10px 0; /* Adjust padding to match field size */
+    padding: 10px;
   }
-
-  
-
-
 
   .contact-text {
-    font-size: 12px; /* Adjust font size for very small screens */
+    font-size: 12px;
   }
-  
+
   .social-media-list {
     display: flex;
-    justify-content: center; /* Ensure icons remain centered */
+    justify-content: center;
   }
 
   .social-media-list li {
-    margin: 0 5px; /* Reduce spacing between icons */
+    margin: 0 5px;
   }
 }
-
-
-
-@media (max-width: 480px) {
-  .contact-text {
-      font-size: 12px; /* Even smaller font size for very small screens */
-  }
-}
-
