@@ -232,8 +232,8 @@ font-family: 'Comfortaa', cursive;
     padding:150px 0;
   }
   .hero-banner{
-  background-image: url('pictures/nowatermark1.png'); 
-    background-size: cover;
+  background-image: url('pictures/herovid3.mp4'); 
+    background-size: 100%;
     height:100vh;
     display:flex;
     align-items:center;
@@ -244,7 +244,7 @@ font-family: 'Comfortaa', cursive;
 
   @media (max-width: 750px) {
     .hero-banner{
-    background-image: url('pictures/Untitled.png'); 
+    background-image: url('pictures/HEROIDEA2.jpg'); 
     }
   }
 
@@ -319,6 +319,7 @@ font-family: 'Comfortaa', cursive;
   .about{
     text-align:center;
     line-height:2;
+    background: #f1f1f1;
   }
 
   .content{
@@ -340,16 +341,11 @@ font-family: 'Comfortaa', cursive;
 
   }
 
-  hr.abouthr{
-    overflow: visible; /* For IE */
-    padding: 0;
-    border: 3 px;
-    border-top: medium double black;
-    color: black;
-    text-align: center;
-    width: 90%;
-    margin-left: 8.5%;
-    border: 5px solid black;
+hr.abouthr {
+  border: 0;
+  border-top: 1px solid #000;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 
@@ -374,7 +370,7 @@ font-family: 'Comfortaa', cursive;
   }
 
   .calendar {
-    background: #f1f1f1;
+    background: white;
   padding: 100px;
   }
 
@@ -406,7 +402,7 @@ font-family: 'Comfortaa', cursive;
     
 
 .CV {
-  background: white;
+  background: #f1f1f1;
 
 }
 
@@ -425,16 +421,10 @@ font-family: 'Comfortaa', cursive;
 }
 
 hr.cvhr {
-  width: auto;
-  margin-left: auto;
-  padding: 0;
-    border: 3 px;
-    border-top: medium double black;
-    color: black;
-    text-align: center;
-    width: 90%;
-    border: 5px solid black;
-    border-color: #f1f1f1;
+  border: 0;
+  border-top: 1px solid #ddd;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 
@@ -482,7 +472,7 @@ font-family: 'Comfortaa', cursive;
   .portfolio {
     text-align:center;
     line-height:2;
-    background:#f1f1f1;
+    background:white;
 
   }
 
@@ -583,6 +573,11 @@ font-family: 'Comfortaa', cursive;
   color: white;
   text-transform: uppercase;
   letter-spacing: 6px;
+}
+
+#contactheader {
+  color: white;
+  font-weight: 100;
 }
 
 
@@ -757,9 +752,6 @@ textarea {
   text-align: center;
 }
 
-hr.abouthr {
-  border-color: white;
-}
 
 
 
@@ -927,4 +919,284 @@ hr.abouthr {
   .social-media-list li {
     margin: 0 5px;
   }
+}
+
+.packages-section {
+  background: #f1f1f1;
+
+
+}
+
+/* ===== Packages slider (isolated, no Bootstrap collisions) ===== */
+#packages { padding: 80px 0 110px; scroll-margin-top: 90px; }
+#packages .pkg-slider { position: relative; max-width: 1100px; margin: 0 auto; }
+#packages .pkg-track { display: grid; grid-template-columns: 1fr; }
+#packages .pkg-slide { display: none; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; border-radius: 10px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.12); background: #fff; }
+#packages .pkg-slide.is-active { display: grid; }
+#packages .pkg-media { position: relative; min-height: 520px; }
+#packages .pkg-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#packages .pkg-info { padding: 24px; display: flex; flex-direction: column; justify-content: center; }
+#packages .pkg-subtitle { font: 700 14px/1.2 'Oswald', sans-serif; letter-spacing: 2px; text-transform: uppercase; color: #999; margin: 0 0 6px; }
+#packages .pkg-title { font: 300 40px/1.1 'Oswald', sans-serif; letter-spacing: 1px; margin: 0 0 12px; color: #000; }
+#packages .pkg-desc { font-family: 'Comfortaa', cursive; color: #333; margin: 0 0 16px; }
+#packages .pkg-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid #000;
+  background: transparent;
+  color: #000;
+  text-decoration: none;
+  width: auto;              /* shrink to fit */
+  white-space: nowrap;      /* keep label compact */
+  align-self: flex-start;   /* prevent full‑width stretching in flex column */
+}
+#packages .pkg-btn:hover { background: #000; color: #fff; }
+
+
+@media (max-width: 992px){
+  #packages .pkg-slide { grid-template-columns: 1fr; }
+  #packages .pkg-media { min-height: 460px; }
+}
+
+#packages .pkg-arrow {
+  position: absolute;
+  bottom: -60px;
+  top: auto;
+  transform: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, .65);
+  color: #fff;
+}
+#packages .pkg-arrow--left { left: calc(50% - 60px); }
+#packages .pkg-arrow--right { right: calc(50% - 60px); }
+#packages .pkg-arrow:hover { background: rgba(0, 0, 0, .85); }
+
+#packages .pkg-slider { padding-bottom: 80px; }
+
+/* ===== About: center copy and add members grid ===== */
+.about .content { display: block; max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+#aboutText { margin: 0 auto; max-width: 800px; text-align: center; }
+
+.members { padding: 20px 0 0; }
+.members-title { text-align: center; font: 700 24px 'Oswald', sans-serif; letter-spacing: 3px; text-transform: uppercase; margin: 10px 0 18px; }
+.members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+.member-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,.08); text-align: center; }
+.member-photo { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; display: block; margin: 20px auto 12px; }
+.member-name { font: 700 18px 'Oswald', sans-serif; letter-spacing: 1px; margin: 0; color: #000; }
+.member-role { font-family: 'Comfortaa', cursive; color: #666; margin: 4px 0 8px; }
+.member-bio { font-family: 'Comfortaa', cursive; color: #333; font-size: 14px; line-height: 1.5; padding: 0 16px 18px; }
+
+.member-photo { filter: grayscale(100%); transition: filter .2s ease; }
+.member-card:hover .member-photo { filter: none; }]
+
+/* ===== Members: image-on-top variant ===== */
+.members--image-top .member-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.members--image-top .member-photo {
+  width: 100%;
+  height: 280px;      /* try 240–260px if you want taller banners */
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0;
+}
+.members--image-top .member-name,
+.members--image-top .member-role,
+.members--image-top .member-bio {
+  padding: 0 16px;
+  text-align: center;
+}
+.members--image-top .member-name { margin-top: 12px; }
+
+
+@media (max-width: 480px) {
+  .members-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ===== Member card hover effects ===== */
+.member-photo {
+  filter: grayscale(100%);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.member-card:hover .member-photo {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+.member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* ===== Uniform card layout: Additional Value ===== */
+#CV .card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+#CV .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+#CV .card-img-top {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;   /* uniform crop */
+  object-fit: cover;
+}
+#CV .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 20px;
+}
+#CV .card-title { margin: 8px 0 0; }
+#CV .card-text { margin-top: 10px; }
+
+.logos {
+  overflow: hidden;
+  padding: 30px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before, .logos:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0), #fff);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0), #fff);
+}
+
+/* only THIS moves */
+.logos-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: slides 35s linear infinite;
+}
+
+.logo_items {
+  display: inline-block;
+}
+
+.logo_items img {
+  height: 100px;
+  margin: 0 32px; /* spacing between logos */
+  display: inline-block;
+}
+
+/* now that we have 2 identical rows in 1 track, we can scroll half-way */
+@keyframes slides {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== Bandsintown widget theming ===== */
+.widget-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.widget-container .bit-widget {
+  font-family: 'Comfortaa', cursive;
+  color: #000;
+}
+
+/* section title inside the widget */
+.widget-container .bit-widget .bit-events-heading,
+.widget-container .bit-widget h2,
+.widget-container .bit-widget h3 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* each event row */
+.widget-container .bit-widget .bit-event {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 0;
+}
+
+/* buttons: match your red accent */
+.widget-container .bit-widget .bit-button,
+.widget-container .bit-widget .bit-event-ticket {
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Comfortaa', cursive;
+  cursor: pointer;
+}
+.widget-container .bit-widget .bit-button:hover,
+.widget-container .bit-widget .bit-event-ticket:hover {
+  background: #b30000;
+}
+
+/* follow / request a show area */
+.widget-container .bit-widget .bit-follow-button,
+.widget-container .bit-widget .bit-city-button {
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* dates */
+.widget-container .bit-widget .bit-date,
+.widget-container .bit-widget .bit-venue,
+.widget-container .bit-widget .bit-location {
+  font-family: 'Comfortaa', cursive;
+  color: #333;
+}
+
+/* calendar: view all dates button */
+.calendar-more {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.btn-view-dates {
+  display: inline-block;
+  background: transparent;
+  color: #000;
+  padding: 8px 20px;
+  border: 2px solid #000;
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-view-dates:hover {
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
