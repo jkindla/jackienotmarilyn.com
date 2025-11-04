@@ -1146,16 +1146,24 @@ textarea {
 /* buttons: match your red accent */
 .widget-container .bit-widget .bit-button,
 .widget-container .bit-widget .bit-event-ticket {
-  background: red;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+    display: inline-block;
+  background: transparent;
+  color: #000;
+  padding: 8px 20px;
+  border: 2px solid #000;
   font-family: 'Comfortaa', cursive;
-  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 .widget-container .bit-widget .bit-button:hover,
 .widget-container .bit-widget .bit-event-ticket:hover {
-  background: #b30000;
+    text-decoration: none;
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
 /* follow / request a show area */
