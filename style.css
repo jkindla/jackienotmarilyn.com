@@ -949,22 +949,37 @@ textarea {
   width: auto;              /* shrink to fit */
   white-space: nowrap;      /* keep label compact */
   align-self: flex-start;   /* prevent full‑width stretching in flex column */
-}
-#packages .pkg-btn:hover { background: #000; color: #fff; }
+  transition: background 0.4s ease, color 0.4s ease;
 
+}
+#packages .pkg-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+#packages .pkg-actions {
+  display: flex;
+  gap: 0.5rem;            /* space between buttons */
+  flex-wrap: wrap;        /* lets them wrap on small screens */
+}
+
+#packages .pkg-actions .pkg-btn {
+  margin-top: 0;          /* kill the stacked spacing rule */
+}
 
 @media (max-width: 992px){
   #packages .pkg-slide { grid-template-columns: 1fr; }
   #packages .pkg-media { min-height: 460px; }
 }
 
+/* packages arrows – improved */
 #packages .pkg-arrow {
   position: absolute;
-  bottom: -60px;
+  bottom: -38px; /* closer to cards */
   top: auto;
   transform: none;
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 0;
   cursor: pointer;
@@ -972,11 +987,25 @@ textarea {
   place-items: center;
   background: rgba(0, 0, 0, .65);
   color: #fff;
+  font-size: 1.4rem;
+  transition: background 0.25s ease;
 }
-#packages .pkg-arrow--left { left: calc(50% - 60px); }
-#packages .pkg-arrow--right { right: calc(50% - 60px); }
-#packages .pkg-arrow:hover { background: rgba(0, 0, 0, .85); }
 
+#packages .pkg-arrow--left  { left: calc(50% - 70px); }
+#packages .pkg-arrow--right { right: calc(50% - 70px); }
+
+#packages .pkg-arrow:hover {
+  background: rgba(0, 0, 0, .85);
+}
+
+@media (max-width: 600px) {
+  #packages .pkg-arrow {
+    width: 56px;
+    height: 56px;
+    bottom: -34px;
+    font-size: 1.5rem;
+  }
+}
 #packages .pkg-slider { padding-bottom: 80px; }
 
 /* ===== About: center copy and add members grid ===== */
@@ -1203,3 +1232,4 @@ textarea {
     object-position: 50% 0%; /* show very top */
   }
 }
+
